@@ -1,73 +1,9 @@
-libsailfishapp: Sailfish Application Library
-============================================
+sailfishapp-doc: Sailfish Application Documentation
+===================================================
 
 License: GNU Lesser General Public License version 2.1
 
-This library should be used by Sailfish applications to create a QML view.
-libsailfishapp will take care of using the booster if possible, and will
-also make sure that applications built with the Sailfish SDK are future-
-proof, by putting all special cases inside libsailfishapp, where it can be
-updated by the vendor.
+Documentation to support the creation of Sailfish Applications using
+libsailfishapp.
 
-Usage (Sailfish Silica Applications with custom C++ main() function):
 
-  1. In the .spec file, add:
-
-        BuildRequires: pkgconfig(sailfishapp)
-
-  2. In the .pro file, add:
-
-        CONFIG += sailfishapp
-
-  3. In the .desktop file, use:
-  
-        Exec=<appname>
-
-Usage (QML-only Sailfish Silica Applications, using "sailfish-qml"):
-
-  1. In the .spec file, add:
-
-        BuildRequires: pkgconfig(sailfishapp)
-        Requires: libsailfishapp-launcher
-
-  2. In the .pro file, add:
-
-        CONFIG += sailfishapp_qml
-
-  3. In the .desktop file, use:
-
-        Exec=sailfish-qml <appname>
-
-Translation support:
-
-  1. In the .pro file, add:
-
-        CONFIG += sailfishapp_i18n
-        TRANSLATIONS += translations/appname-LANG1.ts
-        TRANSLATIONS += translations/appname-LANG2.ts
-
-Id-based translations can be handled by further adding:
-
-        CONFIG += sailfishapp_i18n_idbased
-
-To install also unfinished translations, add:
-
-        CONFIG += sailfishapp_i18n_unfinished
-
-To specify additional translation sources, add:
-
-        TRANSLATION_SOURCES += /path/to/translation/sources
-
-The ABI that is provided by libsailfishapp and must be kept stable:
-
-  - libsailfishapp.so.1
-      - SailfishApp::application
-      - SailfishApp::createView
-      - SailfishApp::pathTo
-      - SailfishApp::main
-
-The source API that is provided by libsailfishapp and should be kept stable:
-
-  - qmake
-      - CONFIG += sailfishapp        (for C++/QML applications)
-      - CONFIG += sailfishapp_qml    (for pure QML applications)
