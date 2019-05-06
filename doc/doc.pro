@@ -1,12 +1,12 @@
 TEMPLATE = aux
 
 CONFIG += mer-qdoc-template
-MER_QDOC.project = libsailfishapp
-MER_QDOC.config = libsailfishapp.qdocconf
+MER_QDOC.project = sdk-user-manual
+MER_QDOC.config = sdk-user-manual.qdocconf
 MER_QDOC.style = offline
-MER_QDOC.path = /usr/share/doc/libsailfishapp/
+MER_QDOC.path = /usr/share/doc/sdk-user-manual/
 
 OTHER_FILES += \
-    $$PWD/libsailfishapp.qdocconf \
+    $$PWD/sdk-user-manual.qdocconf \
     $$PWD/index.qdoc
 

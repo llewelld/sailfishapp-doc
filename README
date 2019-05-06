@@ -1,9 +1,13 @@
-sailfishapp-doc: Sailfish Application Documentation
-===================================================
+Sailfish SDK User Manual
+========================
 
-License: GNU Lesser General Public License version 2.1
+Documentaiton license:
+    Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)
 
-Documentation to support the creation of Sailfish Applications using
-libsailfishapp.
+Example code licence:
+    BSD License 2.0 (3-clause)
+
+Documentation for introducing users to the Sailfish SDK. Details how to create
+Sailfish Applications using the libsafailfishapp support library.
 
 

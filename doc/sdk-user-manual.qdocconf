@@ -2,7 +2,7 @@ project         = Sailfish App Library
 description     = Sailfish App Library Reference Documentation
 versionsym      =
 version         = 1.0.0
-url             = https://github.com/sailfishos/libsailfishapp/
+url             = https://github.com/sailfishos/sdk-user-manual/
 
 sourcedirs += $$PWD/../doc $$PWD/../src
 headerdirs += $$PWD/../include

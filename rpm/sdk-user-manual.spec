@@ -1,22 +1,19 @@
-Name: sailfishapp-doc
+Name: sdk-user-manual
 Version: 1
 Release: 1
-Summary: Sailfish Application Documentation
+Summary: Sailfish SDK User Manual
 Group: Documentation
-License: LGPLv2.1
-URL: https://github.com/sailfishos/sailfishapp-doc
+License: CC BY-NC-SA 3.0 / BSD
+URL: https://github.com/sailfishos/sdk-user-manual
 Source: %{name}-%{version}.tar.bz2
 
 %description
-Documentation explaining how to create Sailfish Applications using the
-libsafailfishapp support library.
+Documentation for introducing users to the Sailfish SDK. Details how to create
+Sailfish Applications using the libsafailfishapp support library.
 
 %package doc
 Summary: Documentation for %{name}.
 BuildRequires: mer-qdoc-template
-
-%description doc
-This package contains the documentation for %{name}.
 
 %prep
 %setup -q
