@@ -15,6 +15,9 @@ Sailfish Applications using the libsafailfishapp support library.
 Summary: Documentation for %{name}.
 BuildRequires: mer-qdoc-template
 
+%description doc
+This package contains the documentation for %{name}.
+
 %prep
 %setup -q
 

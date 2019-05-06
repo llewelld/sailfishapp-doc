@@ -26,9 +26,9 @@ outputprefixes.QML = qml-SailfishAppLibrary-
 
 qhp.projects = SailfishAppLibrary
 
-qhp.SailfishAppLibrary.file = libsailfishapp.qhp
+qhp.SailfishAppLibrary.file = sdk-user-manual.qhp
 qhp.SailfishAppLibrary.namespace = org.sailfishos.libsailfishapp.1.0.0
-qhp.SailfishAppLibrary.virtualFolder = libsailfishapp
+qhp.SailfishAppLibrary.virtualFolder = sdk-user-manual
 qhp.SailfishAppLibrary.indexTitle = Sailfish App Library Overview
 qhp.SailfishAppLibrary.indexRoot =
 
