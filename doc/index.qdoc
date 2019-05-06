@@ -17,7 +17,7 @@
 To ease development of applications for Sailfish OS and to make sure paths for
 the applications are set correctly and application startup time is
 accelerated, third party applications on Sailfish OS should use libsailfishapp.
-This library provides certain convenience functions within the \l SailfishApp
+This library provides certain convenience functions within the \c SailfishApp
 namespace to set up your project, install all files into the right directories,
 and get important paths at runtime via convenience methods.
 
@@ -35,7 +35,7 @@ For more specific API documentation, see the following page.
 
 \section1 How to use SailfishApp in your project
 
-To use \l SailfishApp in your project:
+To use \c SailfishApp in your project:
 
 \list 1
     \li Add \c {BuildRequires: pkgconfig(sailfishapp)} to your .spec file
@@ -60,7 +60,7 @@ directory as the .pro file:
 
 If you want to opt out of automatic deployment of the \c{qml/}
 folder, set \c{CONFIG += sailfishapp_no_deploy_qml} before adding
-the \l SailfishApp configuration option. You might want to set this option if
+the \c SailfishApp configuration option. You might want to set this option if
 for some reason you intend to ship your QML files as Qt Resources (qrc).
 We recommend that you keep the default setup and install QML files in the
 filesystem instead.
@@ -149,23 +149,23 @@ isn't a requirement, but proper use it will significantly improve the chance of
 your app passing the \l {https://harbour.jolla.com/} {Harbour QA} process.
 
 For the most common use of the API, start by accessing the \c QGuiApplication
-instance for your programme by calling the \l SailfishApp::application()
+instance for your programme by calling the \c SailfishApp::application()
 method, passing in any remaining arguments from the command line that you don't
 want to consume yourself. This will return a pointer to the single \c
 QGuiApplication instance for your application. This provides the main Qt event
 loop, lets you manage the application lifecycle, and get basic information
 about the screen, window configuration and so on.
 
-Before calling the main event loop, you'll need to tell \l SailfishApp which
-QML file to use for the topmost window. This can be set using a call to \l
+Before calling the main event loop, you'll need to tell \c SailfishApp which
+QML file to use for the topmost window. This can be set using a call to \c
 SailfishApp::createView() to access the application \c QQuickView instance. Call
 the \c setSource() method of this \c QQuickView instance to configure the
 location of the QML file to use.
 
 \quotefile example01/src/harbour-demo.cpp
 
-In this example code the application \l SailfishApp::pathTo() is used to specify
-the location of the root QML file to use. A call to \l SailfishApp::pathTo()
+In this example code the application \c SailfishApp::pathTo() is used to specify
+the location of the root QML file to use. A call to \c SailfishApp::pathTo()
 takes a relative path inside your application's data folder and converts it
 into a fully qualified path. Your application's data directory is located at \c
 /usr/share/$$TARGET/, so in this case the fully qualified path of the QML file
@@ -174,19 +174,19 @@ will be \c /usr/share/$$TARGET/qml/harbour-demo.qml
 The above example allows for full integration between your C++ code and QML, as
 described below. However, if your application is written entirely using QML,
 and requires only limited interaction with C++ code, then you can simplify the
-C++ even further by making use of \l SailfishApp::main(). This wraps all of the
+C++ even further by making use of \c SailfishApp::main(). This wraps all of the
 code in the example above into a single call, which you can deploy like this.
 
 \quotefile example-others/src/harbour-demo-02.cpp
 
-The call to \l SailfishApp::main() will load in the QML file located at \c
+The call to \c SailfishApp::main() will load in the QML file located at \c
 /usr/share/$$TARGET/qml/$$TARGET.qml as the topmost window. It then enters the
 main event loop and only returns once all windows have been closed.
 
-Use of \l SailfishApp::main() is a great way to get a Sailfish application
+Use of \c SailfishApp::main() is a great way to get a Sailfish application
 up-and-running in the quickest time and with the smallest amount of boilerplate
 code. If you find you need more flexibility, you can always convert it to use
-\l SailfishApp::application() later.
+\c SailfishApp::application() later.
 
 \section1 SailfishApp QML-only launcher
 
@@ -374,7 +374,7 @@ These requirements must be met for your application to pass \l
 Store. You can't, for example, have a separate package containing the library
 as a dependency of your application.
 
-If you arrange your application in this way and use \l SailfishApp as
+If you arrange your application in this way and use \c SailfishApp as
 described above, then the \c rpath (the runtime library search path that gets
 baked into your application) of your application will be automatically set up
 to point to \c \usr\share\$$TARGET\lib, and so your application should pick up
@@ -463,7 +463,7 @@ other two subprojects as follows.
 
 \quotefile example09/example09.pro
 
-The \c harbour-demo-app.pro file contains the same \l SailfishApp details we
+The \c harbour-demo-app.pro file contains the same \c SailfishApp details we
 described in the preceding sections for an application without any libraries,
 as you can see here:
 
@@ -492,7 +492,7 @@ application can find the library at runtime.
 \section1 Installing and using private QML imports
 
 Any private QML imports should be installed under \c /usr/share/$$TARGET. By
-using the \l SailfishApp application calls described above, the directory is
+using the \c SailfishApp application calls described above, the directory is
 automatically added to the QML import path, so any modules can be immediately
 imported into your QML.
 
@@ -565,7 +565,7 @@ application should store its configuration files in the \c
 $XDG_CONFIG_HOME/$$TARGET directory.
 
 In practice, this means storing them in \c $HOME/.config/$$TARGET. However,
-this path shouldn't be hardcoded and for users of \l SailfishApp the
+this path shouldn't be hardcoded and for users of \c SailfishApp the
 appropriate Qt \c QStandardPath should be used instead.
 
 \quotefromfile example-others/src/harbour-demo-11.cpp
@@ -573,8 +573,8 @@ appropriate Qt \c QStandardPath should be used instead.
 \skipto config_dir
 \printuntil filePath
 
-When using \l SailfishApp, the application name will be automatically set to
-ensure this path works correctly. \l SailfishApp uses the binary name in the
+When using \c SailfishApp, the application name will be automatically set to
+ensure this path works correctly. \c SailfishApp uses the binary name in the
 case of a C++ applications or the first argument in the case of a QML-only
 application with the \c{sailfish-qml} launcher
 
@@ -604,14 +604,14 @@ application, or application-generated data which isn't considered to be
 configuration data. Just like the configuration, there's a specific location
 where this data should be stored: in the \c $XDG_DATA_HOME/$$TARGET folder,
 which in practice is set to \c $HOME/.local/share. However, as with the
-configuration path, applications shouldn't hardcode these paths and users of \l
+configuration path, applications shouldn't hardcode these paths and users of \c
 SailfishApp should use the path returned by \c
 QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) instead.
 
 Note that by default \c
 QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) will actually
 return \c $HOME/.local/share/$$TARGET/$$TARGET (i.e. with the $$TARGET folder
-repeated). This is because when using \l SailfishApp both the application name
+repeated). This is because when using \c SailfishApp both the application name
 and the organization name are set to the name of your application, and the path
 returned is of the form \c $HOME/.local/share/<ORGANIZATION_NAME>/$$TARGET.
 
@@ -630,7 +630,7 @@ files can be removed at any time by the system if disk space is low and these
 files are not guaranteed to be backed up.
 
 You can also use the Qt Quick Local Storage API to store data directly from
-your QML-only Sailfish application. \l SailfishApp will make sure that your
+your QML-only Sailfish application. \c SailfishApp will make sure that your
 application uses an appropriate application-specific storage directory.
 
 */

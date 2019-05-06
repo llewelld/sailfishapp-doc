@@ -85,9 +85,12 @@ HTML.footer += \
     "  <p><acronym title=\"Copyright\">&copy;</acronym> 2019 Jolla Ltd.</p>\n" \
     "  <p>All other trademarks are property of their respective owners.</p>\n" \
     "  <p>\n" \
-    "    This document may be used under the terms of the " \
-    "    <a href=\"http://www.gnu.org/licenses/fdl.html\">GNU Free Documentation License version 1.3</a>" \
-    "    as published by the Free Software Foundation." \
+    "    This document may be used under the terms of the Creative Commons" \
+    "    <a href=\"https://creativecommons.org/licenses/by-nc-sa/3.0/\">" \
+    "    Attribution-NonCommercial-ShareAlike 3.0 Unported licence" \
+    "    (CC BY-NC-SA 3.0)</a>. The example code may be used under the terms" \
+    "    of the <a href=\"https://opensource.org/licenses/BSD-3-Clause\">" \
+    "    BSD License 2.0 (3-clause)</a>." \
     "  </p>\n" \
     "</div>\n"
 
