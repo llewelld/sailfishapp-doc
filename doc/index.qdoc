@@ -27,12 +27,6 @@ here as a guide for how to replicate the directory layout and paths. However,
 we generally recommend using libsailfishapp where possible, as it will allow
 applications to easily and automatically integrate well with Sailfish OS.
 
-\section1 API documentation
-
-For more specific API documentation, see the following page.
-
-\annotatedlist libsailfishapp-index
-
 \section1 How to use SailfishApp in your project
 
 To use \c SailfishApp in your project:
